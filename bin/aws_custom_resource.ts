@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
-import * as cdk from 'aws-cdk-lib';
-import { AwsCustomResourceStack } from '../lib/aws_custom_resource-stack';
+import * as cdk from "aws-cdk-lib";
+import "source-map-support/register";
+import { AwsCustomResourceStack } from "../lib/aws_custom_resource-stack";
 
 const app = new cdk.App();
-new AwsCustomResourceStack(app, 'AwsCustomResourceStack', {
+new AwsCustomResourceStack(app, "AwsCustomResourceStack", {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
@@ -15,7 +15,7 @@ new AwsCustomResourceStack(app, 'AwsCustomResourceStack', {
 
   /* Uncomment the next line if you know exactly what Account and Region you
    * want to deploy the stack to. */
-  // env: { account: '123456789012', region: 'us-east-1' },
+  env: { region: "eu-west-2" },
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
